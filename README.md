@@ -27,24 +27,49 @@ Laravel has the most extensive and thorough [documentation](https://laravel.com/
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+# Neptune Corporate — Laravel Scaffold
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+A Laravel Blade scaffold mirroring neptunecorporate.com.
 
-### Premium Partners
+## Folder Structure
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```
+resources/views/
+├── layouts/
+│   └── app.blade.php          ← Master layout (head, navbar include, footer include)
+├── partials/
+│   ├── navbar.blade.php       ← Navigation bar with all dropdowns
+│   └── footer.blade.php       ← Footer with columns, socials, copyright
+├── home.blade.php             ← Homepage (hero, services, focus, stats, CTA)
+└── blog.blade.php             ← Blog listing with pagination support
 
-## Contributing
+app/Http/Controllers/
+├── HomeController.php
+└── BlogController.php
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+routes/
+└── web.php
+```
+
+## Local Setup
+
+1. Create a fresh Laravel project:
+   ```bash
+   composer create-project laravel/laravel neptune-site
+   cd neptune-site
+   ```
+
+2. Copy the scaffolded files into your project, preserving the folder structure above.
+
+3. Configure `.env` with your database, app URL, etc.
+
+4. Serve locally:
+   ```bash
+   php artisan serve
+   ```
+
+5. Visit `http://localhost:8000` — the homepage will render with placeholder content.
+
 
 ## Code of Conduct
 
